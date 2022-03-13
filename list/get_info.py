@@ -6,7 +6,7 @@ data = []
 with open("bare.json", "r") as f:
     data = json.load(f)
 
-for artist in data[1:2]:
+for artist in data:
     print(artist)
     url = "https://www.wikiart.org/en/" + artist["id"]
     r = requests.get(url)
