@@ -183,7 +183,7 @@ function share() {
 
 function show_image(id) {
     let img = document.getElementById("clue" + current_guess);
-    img.src = "/images/" + solution_imdb + "/" + id + "-smol.png"
+    img.src = "/images/" + solution_imdb + "/" + id + "-smol.jpg"
 }
 
 function reveal_clue(index) {
