@@ -190,9 +190,20 @@ function reveal_clue(index) {
     show_image(index);
 }
 
+function setup_zoomers() {
+    let clues = ["clue0", "clue1", "clue2", "clue3", "clue4", "clue5"];
+    for (let clue of clues) {
+        let img = document.getElementById(clue);
+        img.onclick = function(e) {
+            document.getElementById(clue).classList.toggle("zoomer");
+	}
+    }
+}
+
 async function main() {
     // setup global variables like todays solution
     await setup_globals();
+    setup_zoomers();
 
     // dont use votes anymore for random votes
     //window.votes = await get_votes(solution_imdb);
