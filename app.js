@@ -173,7 +173,7 @@ function countdown() {
 }
 
 function share() {
-    let message = "Movlie.org ";
+    let message = "Artistle.org ";
 
     let day = movlie_number();
     message += "#" + day + " " + current_guess + "/6\n";
@@ -182,21 +182,27 @@ function share() {
 }
 
 function show_image(id) {
-    let img = document.getElementById("clue" + current_guess);
+    let img = document.getElementById("clue" + id);
     img.src = "/images/" + solution_imdb + "/" + id + "-orig.jpg"
 }
 
 function reveal_clue(index) {
     show_image(index);
+    let elements = document.getElementsByClassName("hidden-container");
+    for (let el of elements) {
+        el.classList = "hidden-container"; // reset
+        el.classList.add("clue" + index);
+    }
 }
 
 function setup_zoomers() {
+    return; // disable
     let clues = ["clue0", "clue1", "clue2", "clue3", "clue4", "clue5"];
     for (let clue of clues) {
         let img = document.getElementById(clue);
         img.onclick = function(e) {
             document.getElementById(clue).classList.toggle("zoomer");
-	}
+	    }
     }
 }
 
@@ -205,11 +211,11 @@ async function main() {
     await setup_globals();
     setup_zoomers();
 
+    show_image(0);
+
     // dont use votes anymore for random votes
     //window.votes = await get_votes(solution_imdb);
     //votes = votes.Votes; // array of votes corresponding to screenshot votes
-
-    reveal_clue(0);
 
 
     // guess by click on guess

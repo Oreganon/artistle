@@ -1,3 +1,7 @@
+.flexer {
+    display: flex;
+}
+
 .zoomer {
     top: 0;
     cursor: zoom-out;
@@ -158,12 +162,19 @@ body {
     img {
         width: 100%;
     }
-}
+    .hidden-container:after {
+        width: 100%;
+    }
 
+}
 @media screen and (min-width: 700px) {
     img {
-        width: 49%;
+        width: 80%;
     }
+    .hidden-container:after {
+        width: 80%;
+    }
+
 }
 
 .menu-wrapper {
@@ -304,8 +315,70 @@ button#share-button {
     margin-top: 1em;
 }
 
+.container {
+    overflow:hidden;
+    position: relative;
+}
+
+.example {
+    width: 5em;
+}
+
+.example-hidden-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.example-hidden-container:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 5em;
+  left: 0;
+  background-color: #ffffff;
+}
+
+
+.hidden-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.hidden-container:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+
+.clue0.hidden-container:after,
+.clue0.example-hidden-container:after {
+  height: 80%;
+}
+.clue1.hidden-container:after,
+.clue1.example-hidden-container:after {
+  height: 60%;
+}
+.clue2.hidden-container:after;
+.clue2.example-hidden-container:after {
+  height: 45%;
+}
+.clue3.hidden-container:after,
+.clue3.example-hidden-container:after {
+  height: 30%;
+}
+.clue4.hidden-container:after,
+.clue4.example-hidden-container:after {
+  height: 15%;
+}
+.clue5.hidden-container:after,
+.clue5.example-hidden-container:after {
+  height: 0%;
+}
+
+
 img {
-    cursor: zoom-in;
     max-width: 100%;
 }
 

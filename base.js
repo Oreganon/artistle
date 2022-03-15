@@ -1,5 +1,3 @@
-
-
 async function get_artists() {
     let response = await fetch("artists.json");
     return await response.json();
@@ -11,7 +9,7 @@ function movlie_number() {
     const now = new Date();  
     now.setUTCHours(0, 0, 0, 0);  // go by utc
 
-    let day = Math.floor(now/8.64e7) - 19058;
+    let day = Math.floor(now/8.64e7) - 19065;
     return day;
 }
 
@@ -67,7 +65,7 @@ Random.prototype.nextFloat = function (opt_minOrMax, opt_max) {
  * https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array/6274381#6274381
  */
 function shuffle(a) {
-    return shuffle_with_seed(a, 1);
+    return shuffle_with_seed(a, 1335);
 }
 
 function shuffle_with_seed(a, seed) {
@@ -128,7 +126,7 @@ async function setup_globals() {
     window.imdb_ids = artists.map(x => x.id);
 
     // find the solution, always the same for the whole UTC day
-    window.solution_index = movlie_number() % names.length;
+    window.solution_index = (movlie_number() + 20) % (names.length -1);
     window.solution = names[solution_index];
     window.solution_imdb = imdb_ids[solution_index];
 }

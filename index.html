@@ -31,7 +31,21 @@
     <span class="modal_close">&times;</span>
     <h2 class="center-text">How to play</h2>
     <p>Guess the <b>artist</b> in six tries.</p>
-    <p>Each guess reveals another artwork of the artist.</p>
+    <p>As clues you get paintings of the artist.</p>
+    <p>Each guess reveals more of the paintings and one additional artwork.</p>
+    <p>Example:</p>
+    <div class="flexer">
+        <div class="example-hidden-container clue0">
+            <img class="example" src="/images/pablo-picasso/0-smol.jpg"></img>
+        </div>
+        <div class="example-hidden-container clue1">
+            <img class="example" src="/images/pablo-picasso/0-smol.jpg"></img>
+        </div>
+        <div class="example-hidden-container clue3">
+            <img class="example" src="/images/pablo-picasso/0-smol.jpg"></img>
+        </div>
+    </div>
+
   </div>
 </div>
 
@@ -186,12 +200,24 @@
         </div>
 
         <div class="image-container">
-            <img id="clue0" src=""></img>
-            <img id="clue1" src=""></img>
-            <img id="clue2" src=""></img>
-            <img id="clue3" src=""></img>
-            <img id="clue4" src=""></img>
-            <img id="clue5" src=""></img>
+            <div class="hidden-container clue0">
+                <img id="clue0" src=""></img>
+            </div>
+            <div class="hidden-container clue0">
+                <img id="clue1" src=""></img>
+            </div>
+            <div class="hidden-container clue0">
+                <img id="clue2" src=""></img>
+            </div>
+            <div class="hidden-container clue0">
+                <img id="clue3" src=""></img>
+            </div>
+            <div class="hidden-container clue0">
+                <img id="clue4" src=""></img>
+            </div>
+            <div class="hidden-container clue0">
+                <img id="clue5" src=""></img>
+            </div>
         </div>
     </div>
 
