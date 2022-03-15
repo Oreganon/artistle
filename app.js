@@ -60,6 +60,10 @@ async function check_guessed_artist(guess) {
         let a = create_reveal(guess, "right");
         guess_div.appendChild(a);
 
+        // show all the image in full
+        for (let i = 0; i < 6; ++i) {
+            reveal_clue(i);
+        }
         
         const last_won = parseInt(localStorage.getItem("last_won")) || 0;
         // only update the statistics if we didnt refresh
@@ -108,7 +112,8 @@ async function check_guessed_artist(guess) {
         localStorage.setItem("streak", 0);
 
         display_solution();
-    } else {
+    } else if (guess_lowercase != solution.toLowerCase()){
+        // dont do this if we got the solution
         reveal_clue(current_guess);
     }
 }
