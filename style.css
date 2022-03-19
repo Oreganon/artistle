@@ -360,7 +360,7 @@ button#share-button {
 .clue1.example-hidden-container:after {
   height: 60%;
 }
-.clue2.hidden-container:after;
+.clue2.hidden-container:after,
 .clue2.example-hidden-container:after {
   height: 45%;
 }
